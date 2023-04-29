@@ -971,14 +971,19 @@ License: [MIT](https://github.com/rclone/rclone/blob/master/COPYING)
 
 Restic is a fast and secure backup program.
 
-![Restic logo](../assets/images/restic-logo.png){: width="300" height="69" loading="lazy"}
+![Restic logo](../assets/images/restic-logo.png){: width="200" height="200" loading="lazy"}
 
 === "Quick start"
 
-In order to create a repository at `/srv/restic-repo`, run the following command and enter the same password twice:
+In order to create a repository at `/srv/restic-repo`, run the following command:
 
 ```sh
-$ restic init --repo /srv/restic-repo
+restic init --repo /srv/restic-repo
+```
+
+Then enter the same password twice:
+
+```
 enter password for new repository:
 enter password again:
 created restic repository 085b3c76b9 at /srv/restic-repo
@@ -992,9 +997,9 @@ For more information please read: [Preparing a new repository](https://restic.re
 
 ***
 
-Official documentation: <https://restic.readthedocs.io>
-Official website: <https://restic.net>
-Source code: <https://github.com/restic/restic>
+Official documentation: <https://restic.readthedocs.io>  
+Official website: <https://restic.net>  
+Source code: <https://github.com/restic/restic>  
 License: [BSD 2-Clause "Simplified" License](https://github.com/restic/restic/blob/master/LICENSE)
 
 [Return to the **Optimised Software list**](../../software/)
