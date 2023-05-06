@@ -137,6 +137,8 @@ description: Overview of ready-to-run DietPi-Software options, cloud & backup se
 - [**PaperMC - Fast and optimized Minecraft server**](gaming/#papermc)
 - [**Box86 - i386 userspace emulation for ARMv7**](gaming/#box86)
 - [**Box64 - x86_64 userspace emulation for ARMv8**](gaming/#box64)
+- [**Moonlight (CLI) - CLI game streaming client for Sunshine and NVIDIA GameStream**](gaming/#moonlight-cli)
+- [**Moonlight (GUI) - GUI game streaming client for Sunshine and NVIDIA GameStream**](gaming/#moonlight-gui)
 
 ## [Hardware Projects](hardware_projects/)
 
@@ -157,6 +159,7 @@ description: Overview of ready-to-run DietPi-Software options, cloud & backup se
 - [**Home Assistant - Open-source home automation platform running on Python 3**](home_automation/#home-assistant)
 - [**Domoticz - Multi platform Home Automation System**](home_automation/#domoticz)
 - [**TasmoAdmin - Administrative website for Tasmota devices**](home_automation/#tasmoadmin)
+- [**openHAB - Open Home Automation Bus, an open source home automation platform**](home_automation/#openhab)
 
 ## [Logging Systems](log_system/)
 
