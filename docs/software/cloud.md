@@ -21,7 +21,7 @@ description: Description of DietPi software options related to cloud and backup 
 - [**FuguHub - Your Own Personal Cloud Server**](#fuguhub)
 - [**File Browser - Light web based file manager with sharing features**](#file-browser)
 - [**Rclone - Utility to sync your files to cloud storages**](#rclone)
-- [**Restic - Restic is a fast and secure backup program**](#restic)
+- [**Restic - Fast, efficient and secure command-line backup program**](#restic)
 
 ??? info "How do I run **DietPi-Software** and install **optimised software** items?"
     To install any of the **DietPi optimised software items** listed below run from the command line:
@@ -692,9 +692,10 @@ It is an open source Kubernetes Native, High Performance Object Storage (S3 Comp
 
 === "Quick start"
 
-    The web interface is accessible via port **9000**:
+    The web interface is accessible via TCP port **9001** and S3 clients need to connect via TCP port **9004**:
 
-    - URL: `http://<your.IP>:9000`
+    - Web UI URL: `http://<your.IP>:9001`
+    - S3 API URL: `http://<your.IP>:9004`
     - Username: `minioadmin`
     - Password: `minioadmin`
     - [MinIO Server Quick Start Guide](https://docs.min.io/docs/minio-quickstart-guide.html)
@@ -703,8 +704,10 @@ It is an open source Kubernetes Native, High Performance Object Storage (S3 Comp
 
 ***
 
-Website: <https://min.io/product/overview>  
-Official documentation: <https://docs.min.io/>
+Official website: <https://min.io/product/overview>  
+Official documentation: <https://docs.min.io/>  
+Source code: <https://github.com/minio/minio>  
+License: [AGPLv3](https://github.com/minio/minio/blob/master/LICENSE)
 
 ## Firefox Sync Server
 
@@ -963,43 +966,38 @@ Rclone is a command-line program to manage files on cloud storage. It is a featu
 
 ***
 
-Official documentation: <https://rclone.org/>
-Source code: <https://github.com/rclone/rclone>
+Official documentation: <https://rclone.org/>  
+Source code: <https://github.com/rclone/rclone>  
 License: [MIT](https://github.com/rclone/rclone/blob/master/COPYING)
 
 ## Restic
 
-Restic is a fast and secure backup program.
+Restic is a fast, efficient and secure command-line backup program.
 
-![Restic logo](../assets/images/restic-logo.png){: width="200" height="200" loading="lazy"}
+![Restic logo](../assets/images/restic-logo.png){: width="250" height="250" loading="lazy"}
 
 === "Quick start"
 
-In order to create a repository at `/srv/restic-repo`, run the following command:
+In order to create a repository at `/mnt/dietpi_userdata/restic-repo`, run the following command and enter the same password twice:
 
-```sh
-restic init --repo /srv/restic-repo
-```
-
-Then enter the same password twice:
-
-```
+```console
+$ restic init --repo /mnt/dietpi_userdata/restic-repo
 enter password for new repository:
 enter password again:
-created restic repository 085b3c76b9 at /srv/restic-repo
+created restic repository 085b3c76b9 at /mnt/dietpi_userdata/restic-repo
 Please note that knowledge of your password is required to access the repository.
 Losing your password means that your data is irrecoverably lost.
 ```
 
 !!! warning "Remembering your password is important! If you lose it, you won’t be able to access data stored in the repository."
 
-For more information please read: [Preparing a new repository](https://restic.readthedocs.io/en/stable/030_preparing_a_new_repo.html)
+For more information please read the related section in the official Restic docs: [Preparing a new repository](https://restic.readthedocs.io/en/stable/030_preparing_a_new_repo.html)
 
 ***
 
-Official documentation: <https://restic.readthedocs.io>  
-Official website: <https://restic.net>  
+Official website: <https://restic.net/>  
+Official documentation: <https://restic.readthedocs.io/en/stable/>  
 Source code: <https://github.com/restic/restic>  
-License: [BSD 2-Clause "Simplified" License](https://github.com/restic/restic/blob/master/LICENSE)
+License: [BSD 2-Clause](https://github.com/restic/restic/blob/master/LICENSE)
 
 [Return to the **Optimised Software list**](../../software/)
