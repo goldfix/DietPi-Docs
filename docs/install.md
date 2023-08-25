@@ -42,7 +42,7 @@ Select the following tabs for the installation description of your target.
 
     **Unzip the downloaded file to a local folder.**
 
-    It is a _7z_ archive format so you will need to install either [7zip for Windows](https://www.7-zip.org/) or [The Unarchiver (Macintosh)](https://wakaba.c3.cx/s/apps/unarchiver.html). Both are free of charge and have been tested to unzip the image correctly.
+    It is a _7z_ archive format so you will need to install either [7zip for Windows](https://www.7-zip.org/) or [The Unarchiver (Macintosh)](https://theunarchiver.com/). Both are free of charge and have been tested to unzip the image correctly.
 
     Linux users will need to download and install `p7zip` (the terminal version of `7zip`).
 
@@ -59,7 +59,7 @@ Select the following tabs for the installation description of your target.
         7zr x DietPi-Image.7z
         ```
 
-        Replace **DietPi-Image.7z** with the correct name of the downloaded archive, e.g. **DietPi_RPi-ARMv6-Bullseye.7z**. This will extract the DietPi image file for you to use.
+        Replace **DietPi-Image.7z** with the correct name of the downloaded archive, e.g. **DietPi_RPi-ARMv6-Bookworm.7z**. This will extract the DietPi image file for you to use.
 
     ## 2. Flash the DietPi image
 
@@ -142,8 +142,8 @@ Select the following tabs for the installation description of your target.
              ```sh
              mkdir ~/Downloads
              cd ~/Downloads
-             curl -LO 'https://download.virtualbox.org/virtualbox/7.0.4/virtualbox-7.0_7.0.4-154605~Debian~bullseye_amd64.deb'
-             apt install ./virtualbox-7.0_7.0.4-154605~Debian~bullseye_amd64.deb
+             curl -LO 'https://download.virtualbox.org/virtualbox/7.0.10/virtualbox-7.0_7.0.10-158379~Debian~bookworm_amd64.deb'
+             apt install ./virtualbox-7.0_7.0.10-158379~Debian~bookworm_amd64.deb
              ```
 
         2. Installation of the VirtualBox extension pack on a Linux host system  
@@ -151,8 +151,8 @@ Select the following tabs for the installation description of your target.
 
              ```sh
              cd ~/Downloads
-             curl -LO 'https://download.virtualbox.org/virtualbox/7.0.4/Oracle_VM_VirtualBox_Extension_Pack-7.0.4-154605.vbox-extpack'
-             VBoxManage extpack install Oracle_VM_VirtualBox_Extension_Pack-7.0.4-154605.vbox-extpack
+             curl -LO 'https://download.virtualbox.org/virtualbox/7.0.10/Oracle_VM_VirtualBox_Extension_Pack-7.0.10-158379.vbox-extpack'
+             VBoxManage extpack install Oracle_VM_VirtualBox_Extension_Pack-7.0.10-158379.vbox-extpack
              ```
 
         After these two steps the host installation of the VirtualBox extension pack is completed. Further installation steps on the guest system are described below.
@@ -244,7 +244,7 @@ Select the following tabs for the installation description of your target.
             VBoxManage guestproperty set "<vm_name>" "/VirtualBox/GuestAdd/VBoxService/--timesync-set-threshold" 10000
             ```
 
-            Replace `<vm_name>` with the name of your virtual machine, shown in the VM VirtualBox Manager UI, e.g. `DietPi_VirtualBox-x86_64-Bullseye` if you import the VM without changing its name.
+            Replace `<vm_name>` with the name of your virtual machine, shown in the VM VirtualBox Manager UI, e.g. `DietPi_VirtualBox-x86_64-Bookworm` if you import the VM without changing its name.
 
         With all these setup steps the time synchronization with the usage of the extension pack should work. Sometimes it needs a couple of minutes until the time is synchronized, so be somehow patient.
 
@@ -256,7 +256,7 @@ Select the following tabs for the installation description of your target.
 
     One big advantage of such a VM is that it needs only a couple of minutes coming to a running DietPi system.
 
-    One of the options of a virtual machine is [__VMware Workstation Player__](https://www.vmware.com/de/products/workstation-player/workstation-player-evaluation.html) resp. [__VMware Fusion__](https://www.vmware.com/de/products/fusion/fusion-evaluation.html) (macOS).
+    One of the options of a virtual machine is [__VMware Workstation Player__](https://www.vmware.com/products/workstation-player.html) resp. [__VMware Fusion__](https://www.vmware.com/products/fusion.html) (macOS).
 
     ![VMware Player GUI](assets/images/dietpi-VMware-program.png){: width="769" height="588" loading="lazy"}
 
@@ -321,7 +321,7 @@ Select the following tabs for the installation description of your target.
 
     One big advantage of such a VM is that it needs only a couple of minutes coming to a running DietPi system.
 
-    One of the options of a virtual machine appliance server is the freely available [__VMware vSphere Hypervisor__](https://www.vmware.com/products/vsphere-hypervisor.html/) which contains the [VMware ESXi Hypervisor](https://www.vmware.com/products/esxi-and-esx.html/).
+    One of the options of a virtual machine appliance server is the freely available [__VMware vSphere Hypervisor__](https://www.vmware.com/products/vsphere-hypervisor.html) which contains the [VMware ESXi Hypervisor](https://www.vmware.com/products/esxi-and-esx.html).
 
     ![VMware vSphere Hypervisor program](assets/images/VMwareESXi_02.jpg){: width="1918" height="1010" loading="lazy"}
 
@@ -333,7 +333,7 @@ Select the following tabs for the installation description of your target.
 
     Download the **DietPi ESXi** appliance image from [dietpi.com](https://dietpi.com/#download){:class="nospellcheck"} and unzip the downloaded file to a local folder. It is a _7z_ archive format so you will need to install either [7zip for Windows](https://www.7-zip.org/) or other alternative tools.
 
-    The archive contains a couple of files, the important one is `DietPi_ESXi-x86_64-Bullseye.ova`, which has to be uploaded to the ESXi server.
+    The archive contains a couple of files, the important one is `DietPi_ESXi-x86_64-Bookworm.ova`, which has to be uploaded to the ESXi server.
 
     <h2>2. Create the Virtual Machine</h2>
 
@@ -429,14 +429,14 @@ Select the following tabs for the installation description of your target.
         apt update
         apt full-upgrade
         apt install p7zip
-        curl -O https://dietpi.com/downloads/images/DietPi_Proxmox-x86_64-Bullseye.7z
-        7zr x DietPi_Proxmox-x86_64-Bullseye.7z
+        curl -O https://dietpi.com/downloads/images/DietPi_Proxmox-x86_64-Bookworm.7z
+        7zr x DietPi_Proxmox-x86_64-Bookworm.7z
         ```
 
         Optionally verify the SHA256 hash of the downloaded file via:
 
         ```sh
-        sha256sum -c < <(mawk '/SHA256/{print $2"  DietPi_Proxmox-x86_64-Bullseye.qcow2"}' hash.txt)
+        sha256sum -c < <(mawk '/SHA256/{print $2"  DietPi_Proxmox-x86_64-Bookworm.qcow2"}' hash.txt)
         ```
 
         As next, the disk image is imported.  
@@ -444,7 +444,7 @@ Select the following tabs for the installation description of your target.
 
         ```sh
         ID=100
-        qm importdisk "$ID" DietPi_Proxmox-x86_64-Bullseye.qcow2 local-lvm
+        qm importdisk "$ID" DietPi_Proxmox-x86_64-Bookworm.qcow2 local-lvm
         qm set "$ID" --scsi0 "local-lvm:vm-$ID-disk-0"
         qm set "$ID" --boot order=scsi0
         ```
@@ -452,7 +452,7 @@ Select the following tabs for the installation description of your target.
     1. Finally, you can remove the downloaded and extracted files and close the console:
 
         ```sh
-        rm DietPi_Proxmox-x86_64-Bullseye.* hash.txt README.md
+        rm DietPi_Proxmox-x86_64-Bookworm.* hash.txt README.md
         ```
 
     The VM can now be started, select it via left side navigation of the Proxmox web interface, then the **Start** button at the top right side, finally the **Console** button to watch and finish the DietPi first run setup.  
